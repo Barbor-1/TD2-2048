@@ -7,11 +7,15 @@
 class Grille{
 public:
 	Grille(int size = 4);
+	void affichage();
+	int getSize();
+	void generation();
 
 private:
 	int _size;
-	std::vector<vector<int>> _grille;
-}
+	std::vector<std::vector<int>> _grille;
+	bool isEmpty(int x ,int y);
+};
 
 
 #endif //GRILLE_H
