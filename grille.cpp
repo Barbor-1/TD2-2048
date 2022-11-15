@@ -33,19 +33,25 @@ void Grille::affichage(){
 void Grille::generation(){
 	//D'abord vérfier la case -> fonction (do while)
 	//Ajouter une valeur
-	int x = rand() % _size;
-	int y = rand() % _size;
-	if (isEmpty(x,y)){
-		_grille[x][y] = 2 + 2(rand()%2)
-	}
+	bool generer = false;
+	do{
+		int x = rand() % _size;
+		int y = rand() % _size;
+		if (isEmpty(x,y)){
+			std::cout << x << " " << y << std::endl;
+			_grille[x][y] = 2 + 2*(rand()%2);
+			generer = true;
+		}
+	}while(generer == false);
 }
 
 
 bool Grille::isEmpty(int x, int y){
 	if (_grille[x][y] == 0){
 		return true;
-	else
+	}else{
 		return false;
-
 	}
+
+	
 }
